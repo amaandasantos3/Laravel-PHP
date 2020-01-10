@@ -15,7 +15,6 @@ class CreateAnunciosTable extends Migration
     {
         Schema::create('anuncios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome', 30);
             $table->string('titulo', 70);
             $table->text('descricao');
             $table->decimal('valor', 5, 2);
@@ -25,8 +24,8 @@ class CreateAnunciosTable extends Migration
             $table->string('telefone', 70);
             $table->string('estado', 70);
             $table->string('cidade', 70);
+            $table->string('arquivo', 560);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

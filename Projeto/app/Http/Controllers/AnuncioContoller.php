@@ -14,7 +14,8 @@ class AnuncioContoller extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $anuncios = Anuncio::all();
+        return view('welcome', compact(['anuncios']));
     }
 
     /**
@@ -35,6 +36,9 @@ class AnuncioContoller extends Controller
      */
     public function store(Request $request, ImageRepository $repo)
     {
+       
+        $path = $request->file('arquivo')->store('imagens','public');
+
         $anuncio = new Anuncio;
         $anuncio->titulo        = $request->titulo;
         $anuncio->descricao     = $request->descricao;
@@ -45,17 +49,13 @@ class AnuncioContoller extends Controller
         $anuncio->cidade        = $request->cidade;
         $anuncio->estado        = $request->estado;
         $anuncio->telefone      = $request->telefone;
+        $anuncio->arquivo      =  $path;
      
         $anuncio->save();
+        
+        return redirect('/');
 
-        $anuncio = Anuncio::create($request->except('primaryImage'));
-
-        if ($request->hasFile('primaryImage')) {
-            $product->path_image = $repo->saveImage($request->primaryImage, $product->id, 'anuncios', 250);
-         }
-         
-         return redirect()->route('anuncio.home')->with('message', 'Anúncio salvo com sucesso!');
-       }
+    }
 
     
 

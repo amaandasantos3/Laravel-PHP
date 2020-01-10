@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/' , 'AnuncioContoller@index', function () {
     return view('welcome');
 });
 
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

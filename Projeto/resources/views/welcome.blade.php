@@ -44,6 +44,7 @@
 
             .content {
                 text-align: center;
+                width: 1500px;
             }
 
             .title {
@@ -80,17 +81,22 @@
 
             <div class="content">
             <div class="row">
-              <div class="col-sm-6">
+            @foreach($anuncios as $anuncio)
+              <div class="col-sm-4">
                    <div class="card">
-                   <img src="..." class="card-img-top" alt="...">
+                   <img src="/storage/{{ $anuncio->arquivo }}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">{{ $anuncio->titulo }}</h5>
+        <p class="card-text">{{ $anuncio->descricao }}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
+  @endforeach
             </div>
+
         </div>
+   
+
     </body>
 </html>

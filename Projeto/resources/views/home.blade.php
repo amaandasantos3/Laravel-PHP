@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <form method="POST" action="{{ route('cadastro.anuncio') }}">
+  <form method="POST" action="{{ route('cadastro.anuncio') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -56,7 +55,10 @@
       <input type="text" class="form-control" id="cep" name="cep">
     </div>
   </div>
-  <input type='file' id="primaryImage" name="primaryImage" accept="image/*" />
+  <div class="form-group">
+    <label for="arquivo">Image</label>
+    <input type="file" class="form-control-file" id="arquivo" name="arquivo">
+  </div>
   <br>
   <div>
   <button type="submit" class="btn btn-primary">Cadastrar</button>
