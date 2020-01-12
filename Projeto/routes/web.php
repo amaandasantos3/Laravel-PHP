@@ -31,7 +31,8 @@ Route::get('/user/home', 'AnuncioContoller@index')->name('anuncio.home');
 
 Route::post('/user/cad', 'AnuncioContoller@store')->name('cadastro.anuncio');
 
-Route::get('/visualizar/{id}', 'AnuncioContoller@show')->name('ver.anuncio');
+Route::get('/visualizar/{id}', 'AnuncioContoller@show')->name('ver.anuncios');
 
-Route::get('/googlemap', 'MapController@map');
+Route::get('/googlemap/{id}/{cidade}', ['uses' => 'AnuncioContoller@map', 'as' => 'googlemaps']);
+
 Route::get('/googlemap/direction', 'MapController@direction');

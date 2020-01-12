@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html >
     <head>
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>" type="text/css">
-
+    
     </head>
 
 
@@ -26,11 +26,10 @@
                         <div class="col-md-6" id="text">
                             <h4>{{$anuncio->titulo}}</h4>
                              <h4 class="subheading">R$ {{$anuncio->valor}}</h4>
+                             <p class="text-muted">{{$anuncio->cidade}}</p>
                         <p class="text-muted">{{$anuncio->descricao}}</p>
-                   
+                        <a href="{{ route('googlemaps', [$anuncio->id, $anuncio->cidade]) }}" class="btn btn-primary">Ver Mapa</a>
                 </div>
-
-                <iframe src="https://www.google.com/maps/embed?pb={{anuncio -> rua}}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     @endforeach
                    
         </div>

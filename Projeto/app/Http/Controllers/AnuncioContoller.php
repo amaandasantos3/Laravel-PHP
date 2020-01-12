@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Repositories\ImageRepository;
 use Illuminate\Http\Request;
 Use App\Anuncio;
+use FarhanWazir\GoogleMaps\GMaps;
 
 class AnuncioContoller extends Controller
 {
@@ -106,5 +107,25 @@ class AnuncioContoller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function map($id, $cidade)
+    {
+        $anuncios = Anuncio::where('id', $id or 'cidade', $cidade)->get();
+        
+        $config['center'] = $cidade ;
+        $config['zoom'] = '18';
+        $config['map_height'] = '400px';
+
+        $gmap = new GMaps();
+        $gmap->initialize($config);
+
+        $marker['position'] = $cidade;
+        $marker['infowindow_content'] = $cidade;
+
+        $gmap->add_marker($marker);
+        $map = $gmap->create_map();
+        return view('map',compact('map'));
+     
     }
 }
