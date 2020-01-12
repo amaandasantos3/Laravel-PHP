@@ -30,3 +30,8 @@ Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.logi
 Route::get('/user/home', 'AnuncioContoller@index')->name('anuncio.home');
 
 Route::post('/user/cad', 'AnuncioContoller@store')->name('cadastro.anuncio');
+
+Route::get('/visualizar/{id}', 'AnuncioContoller@show')->name('ver.anuncio');
+
+Route::get('/googlemap', 'MapController@map');
+Route::get('/googlemap/direction', 'MapController@direction');

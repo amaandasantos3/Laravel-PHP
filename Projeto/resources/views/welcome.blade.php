@@ -88,7 +88,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ $anuncio->titulo }}</h5>
         <p class="card-text">{{ $anuncio->descricao }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="{{ route('ver.anuncio', ['id' => $anuncio]) }}" class="btn btn-primary">Ver Detalhes</a>
       </div>
     </div>
   </div>

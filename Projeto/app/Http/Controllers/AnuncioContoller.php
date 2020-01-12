@@ -57,7 +57,8 @@ class AnuncioContoller extends Controller
 
     }
 
-    
+
+  
 
     /**
      * Display the specified resource.
@@ -67,8 +68,11 @@ class AnuncioContoller extends Controller
      */
     public function show($id)
     {
-        //
+        $anuncios = Anuncio::where('id', $id)->get();
+
+        return view('ver', compact(['anuncios']));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
