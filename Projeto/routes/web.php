@@ -29,9 +29,18 @@ Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.logi
 
 Route::get('/user/home', 'AnuncioContoller@index')->name('anuncio.home');
 
+
+Route::get('/anuncio/{id}', 'AnuncioContoller@edit')->name('anuncio.edit');
+
 Route::post('/user/cad', 'AnuncioContoller@store')->name('cadastro.anuncio');
 
+Route::post('/{id}', 'AnuncioContoller@update');
+
+Route::delete('/{id}', 'AnuncioContoller@destroy');
+
 Route::get('/visualizar/{id}', 'AnuncioContoller@show')->name('ver.anuncios');
+
+Route::post('deletar/{id}', 'AnuncioContoller@destroy')->name('deletar.anuncio');
 
 Route::get('/googlemap/{id}/{cidade}', ['uses' => 'AnuncioContoller@map', 'as' => 'googlemaps']);
 

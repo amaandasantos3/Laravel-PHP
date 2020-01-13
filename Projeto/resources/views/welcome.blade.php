@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="<?php echo asset('css/welcome.css')?>" type="text/css">
 
         <title>Laravel</title>
 
@@ -78,17 +79,22 @@
                     @endif
                 </div>
             @endif
-
+         
             <div class="content">
+            <div class="title">
+              <h1  id="tit">Quartos Disponíveis</h1>
+            </div>
             <div class="row">
             @foreach($anuncios as $anuncio)
-              <div class="col-sm-4">
+              <div class="col-sm-3">
                    <div class="card">
                    <img src="/storage/{{ $anuncio->arquivo }}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{ $anuncio->titulo }}</h5>
-        <p class="card-text">{{ $anuncio->descricao }}</p>
-        <a href="{{ route('ver.anuncios', ['id' => $anuncio]) }}" class="btn btn-primary">Ver Detalhes</a>
+        <h5 class="titulo card-title">{{ $anuncio->titulo }}</h5>
+        <p class="desc card-text">{{ $anuncio->cidade }}</p>
+        <p class="desc card-text">{{ $anuncio->descricao }}</p>
+        <p class="desc card-text">R$ {{ $anuncio->valor }}</p>
+        <a href="{{ route('ver.anuncios', ['id' => $anuncio]) }}" class="btn btn-warning" id="btn">Ver Detalhes</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,28 @@
+body{
+    background-color: darkgray;
+}
+
+.titulo {
+    font-size: 25px;
+    font-weight: bold;
+    color: cadetblue;
+}
+
+.desc {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.title { 
+    font-weight: bold;
+    color: black;
+}
+
+#btn {
+    font-weight: bold;
+    color: black;
+}
+
+#tit {
+    font-weight: bold;
+}

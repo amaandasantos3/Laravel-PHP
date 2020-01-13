@@ -83,7 +83,8 @@ class AnuncioContoller extends Controller
      */
     public function edit($id)
     {
-        //
+        $anuncios = Anuncio::where('id', $id)->get();
+        return view('editar',compact('anuncios'));
     }
 
     /**
@@ -93,9 +94,22 @@ class AnuncioContoller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, ImageRepository $repo)
     {
-        //
+        $anuncio = Anuncio::findOrFail($id);
+        $path = $request->file('arquivo')->store('imagens','public');
+        $anuncio->titulo        = $request->titulo;
+        $anuncio->descricao     = $request->descricao;
+        $anuncio->valor         = $request->valor;
+        $anuncio->rua           = $request->rua;
+        $anuncio->bairro        = $request->bairro;
+        $anuncio->cep           = $request->cep;
+        $anuncio->cidade        = $request->cidade;
+        $anuncio->estado        = $request->estado;
+        $anuncio->telefone      = $request->telefone;
+        $anuncio->arquivo      =  $path;
+        $anuncio->save();
+        return redirect('/');
     }
 
     /**
@@ -106,7 +120,10 @@ class AnuncioContoller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anuncio = Anuncio::find($id);
+        $anuncio->delete();
+        
+        return redirect('/');
     }
 
     public function map($id, $cidade)
