@@ -29,11 +29,12 @@
                         <p class="text-muted" id="descricao">{{$anuncio->descricao}}</p>
                         <h4 class="subheading" id="valor">R$ {{$anuncio->valor}}</h4>
                         <a href="{{ route('googlemaps', [$anuncio->id, $anuncio->cidade]) }}" class="btn btn-primary" id="btn">Ver Mapa</a>
-                        <a href="{{ route('anuncio.edit', [$anuncio->id]) }}" class="btn btn-danger" id="btn">Ver Mapa</a>
+                        <a href="{{ route('anuncio.edit', [$anuncio->id]) }}" class="btn btn-warning" id="btn">Atualizar</a>
                         <form action="/{{ $anuncio->id }}" method="POST">
                         {!! csrf_field() !!}
                             <input type="hidden" name="_method" value="delete">
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Apagar</button>
+                            <br>
+                            <button type="submit" class="btn btn-danger">Apagar</button>
                           </form>
                 </div>
                     @endforeach
