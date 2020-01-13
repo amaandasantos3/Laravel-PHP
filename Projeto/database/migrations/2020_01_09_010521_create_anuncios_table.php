@@ -17,13 +17,8 @@ class CreateAnunciosTable extends Migration
             $table->increments('id');
             $table->string('titulo', 70);
             $table->text('descricao');
-            $table->decimal('valor', 5, 2);
-            $table->string('rua', 70);
-            $table->string('bairro', 70);
-            $table->string('cep', 70);
-            $table->string('telefone', 70);
-            $table->string('estado', 70);
-            $table->string('cidade', 70);
+            $table->string('valor', 10);
+            $table->string('endereco', 700);
             $table->string('arquivo', 560);
             $table->timestamps();
         });

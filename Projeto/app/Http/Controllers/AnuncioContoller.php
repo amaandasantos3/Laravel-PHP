@@ -44,12 +44,7 @@ class AnuncioContoller extends Controller
         $anuncio->titulo        = $request->titulo;
         $anuncio->descricao     = $request->descricao;
         $anuncio->valor         = $request->valor;
-        $anuncio->rua           = $request->rua;
-        $anuncio->bairro        = $request->bairro;
-        $anuncio->cep           = $request->cep;
-        $anuncio->cidade        = $request->cidade;
-        $anuncio->estado        = $request->estado;
-        $anuncio->telefone      = $request->telefone;
+        $anuncio->endereco           = $request->endereco;
         $anuncio->arquivo      =  $path;
      
         $anuncio->save();
@@ -101,13 +96,8 @@ class AnuncioContoller extends Controller
         $anuncio->titulo        = $request->titulo;
         $anuncio->descricao     = $request->descricao;
         $anuncio->valor         = $request->valor;
-        $anuncio->rua           = $request->rua;
-        $anuncio->bairro        = $request->bairro;
-        $anuncio->cep           = $request->cep;
-        $anuncio->cidade        = $request->cidade;
-        $anuncio->estado        = $request->estado;
-        $anuncio->telefone      = $request->telefone;
-        $anuncio->arquivo      =  $path;
+        $anuncio->endereco      = $request->endereco;
+        $anuncio->arquivo       =  $path;
         $anuncio->save();
         return redirect('/');
     }
