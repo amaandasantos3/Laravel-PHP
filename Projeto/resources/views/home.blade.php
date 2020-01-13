@@ -21,17 +21,14 @@
       <input type="text" class="form-control" id="titulo" name="titulo">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Descção</label>
-      <input type="text" class="form-control" id="descricao" name="descricao">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Contato</label>
-      <input type="text" class="form-control" id="telefone" name="telefone">
-    </div>
-    <div class="form-group col-md-6">
       <label for="inputPassword4">Valor</label>
       <input type="text" class="form-control" id="valor" name="valor">
     </div>
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Descrição</label>
+      <input type="text" class="form-control" id="descricao" name="descricao">
+    </div>
+   
   </div>
   <div class="form-group col-md-12">
     <label for="inputAddress">Endereço</label>
