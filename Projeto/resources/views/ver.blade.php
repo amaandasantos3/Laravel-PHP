@@ -2,7 +2,7 @@
 <html >
     <head>
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>" type="text/css">
-    
+
     </head>
 
 
@@ -20,7 +20,7 @@
                
                     @foreach($anuncios as $anuncio)
                  
-                        <div class="col-md-7 how-img">
+                        <div class="col-md-6 how-img">
                             <img src="/storage/{{ $anuncio->arquivo }}" class="img" id="img" alt=""  width: 35px;/>
                         </div>
                         <div class="col-md-6" >

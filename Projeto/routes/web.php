@@ -45,3 +45,5 @@ Route::post('deletar/{id}', 'AnuncioContoller@destroy')->name('deletar.anuncio')
 Route::get('/googlemap/{id}/{cidade}', ['uses' => 'AnuncioContoller@map', 'as' => 'googlemaps']);
 
 Route::get('/googlemap/direction', 'MapController@direction');
+
+Route::get('/busca', 'BuscaMapa@map');
